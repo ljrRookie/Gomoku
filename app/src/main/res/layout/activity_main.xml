@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@mipmap/bg"
+    tools:context="com.ljr.gomoku.MainActivity">
+
+   <com.ljr.gomoku.view.WuziqiPanel
+       android:id="@+id/wuziqi"
+       android:layout_marginTop="20dp"
+       android:layout_width="match_parent"
+       app:white_img="@mipmap/stone_w2"
+       app:black_img="@mipmap/stone_b1"
+       app:max_count_line="11"
+       app:max_min_count_piece="5"
+       app:panel_line_color="#ffffff"
+       android:layout_height="match_parent"/>
+<LinearLayout
+    android:id="@+id/restart"
+    android:layout_alignParentBottom="true"
+    android:layout_width="wrap_content"
+    android:background="@drawable/bg_btn"
+    android:orientation="horizontal"
+    android:layout_marginBottom="40dp"
+    android:layout_marginLeft="40dp"
+    android:gravity="center_vertical"
+    android:layout_height="wrap_content">
+   <ImageView
+       android:layout_width="wrap_content"
+       android:src="@drawable/restart"
+       android:layout_height="wrap_content"/>
+   <TextView
+       android:text="重新开始"
+       android:layout_marginLeft="5dp"
+       android:layout_marginRight="5dp"
+       android:textColor="#FFFFFB"
+       android:textSize="15sp"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"/>
+</LinearLayout>
+   <LinearLayout
+       android:id="@+id/goback"
+android:layout_marginLeft="20dp"
+       android:layout_width="wrap_content"
+       android:background="@drawable/bg_btn"
+       android:orientation="horizontal"
+       android:gravity="center_vertical"
+       android:layout_height="wrap_content"
+       android:layout_alignTop="@+id/restart"
+       android:layout_toRightOf="@+id/restart"
+       android:layout_toEndOf="@+id/restart">
+      <ImageView
+          android:layout_width="wrap_content"
+          android:src="@drawable/goback"
+          android:layout_height="wrap_content"/>
+      <TextView
+          android:text="悔棋"
+          android:layout_marginLeft="5dp"
+          android:layout_marginRight="5dp"
+          android:textColor="#FFFFFB"
+          android:textSize="15sp"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"/>
+   </LinearLayout>
+  <LinearLayout
+      android:background="@drawable/bg_btn"
+      android:layout_width="wrap_content"
+      android:orientation="vertical"
+      android:layout_height="wrap_content"
+      android:layout_below="@+id/goback"
+      android:layout_alignParentRight="true"
+      android:layout_alignParentEnd="true"
+      android:layout_marginRight="32dp"
+      android:layout_marginEnd="32dp">
+
+      <TextView
+          android:id="@+id/user"
+          android:text="白棋先下"
+          android:layout_marginLeft="10dp"
+          android:layout_marginRight="10dp"
+          android:textColor="#FFFFFB"
+          android:textSize="15sp"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"/>
+   </LinearLayout>
+
+
+</RelativeLayout>
