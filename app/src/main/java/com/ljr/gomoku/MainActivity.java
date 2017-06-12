@@ -1,12 +1,14 @@
 package com.ljr.gomoku;
 
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.MotionEvent;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -19,11 +21,14 @@ public class MainActivity extends AppCompatActivity {
     private LinearLayout mRestart;
     private LinearLayout mGoback;
     public static TextView mUser;
-
+    private ImageView mBgMusic;
+    private Boolean isPlay= true ;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        Intent intent = new Intent(this, MusicServer.class);
+        startService(intent);
         initView();
         initListener();
     }
@@ -71,6 +76,19 @@ public class MainActivity extends AppCompatActivity {
                 mWuziqi.goBack();
             }
         });
+        mBgMusic.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(isPlay){
+                    mBgMusic.setImageResource(R.drawable.stop);
+                    MusicServer.stopMusic();
+                }else{
+                    mBgMusic.setImageResource(R.drawable.play);
+                    MusicServer.startMusic();
+                }
+                isPlay = !isPlay;
+            }
+        });
     }
 
     private void initView() {
@@ -78,9 +96,17 @@ public class MainActivity extends AppCompatActivity {
         mRestart = (LinearLayout) findViewById(R.id.restart);
         mGoback = (LinearLayout) findViewById(R.id.goback);
         mUser = (TextView) findViewById(R.id.user);
+        mBgMusic = (ImageView) findViewById(R.id.bg_music);
+
 
 
     }
 
+    @Override
+    protected void onStop() {
+        Intent intent = new Intent(MainActivity.this,MusicServer.class);
+        stopService(intent);
+        super.onStop();
 
+    }
 }

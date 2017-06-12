@@ -8,6 +8,31 @@
     android:background="@mipmap/bg"
     tools:context="com.ljr.gomoku.MainActivity">
 
+    <LinearLayout
+
+        android:layout_below="@+id/wuziqi"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="50dp"
+        android:layout_width="wrap_content"
+        android:background="@drawable/bg_btn"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:layout_height="wrap_content"
+ >
+        <TextView
+            android:text="背景音乐："
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:textColor="#FFFFFB"
+            android:textSize="20sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+        <ImageView
+            android:id="@+id/bg_music"
+            android:layout_width="wrap_content"
+            android:src="@drawable/play"
+            android:layout_height="wrap_content"/>
+    </LinearLayout>
    <com.ljr.gomoku.view.WuziqiPanel
        android:id="@+id/wuziqi"
        android:layout_marginTop="20dp"
@@ -24,8 +49,8 @@
     android:layout_width="wrap_content"
     android:background="@drawable/bg_btn"
     android:orientation="horizontal"
-    android:layout_marginBottom="40dp"
-    android:layout_marginLeft="40dp"
+    android:layout_marginBottom="50dp"
+    android:layout_marginLeft="50dp"
     android:gravity="center_vertical"
     android:layout_height="wrap_content">
    <ImageView
@@ -37,7 +62,7 @@
        android:layout_marginLeft="5dp"
        android:layout_marginRight="5dp"
        android:textColor="#FFFFFB"
-       android:textSize="15sp"
+       android:textSize="20sp"
        android:layout_width="wrap_content"
        android:layout_height="wrap_content"/>
 </LinearLayout>
@@ -61,7 +86,7 @@ android:layout_marginLeft="20dp"
           android:layout_marginLeft="5dp"
           android:layout_marginRight="5dp"
           android:textColor="#FFFFFB"
-          android:textSize="15sp"
+          android:textSize="20sp"
           android:layout_width="wrap_content"
           android:layout_height="wrap_content"/>
    </LinearLayout>
@@ -73,8 +98,9 @@ android:layout_marginLeft="20dp"
       android:layout_below="@+id/goback"
       android:layout_alignParentRight="true"
       android:layout_alignParentEnd="true"
-      android:layout_marginRight="32dp"
-      android:layout_marginEnd="32dp">
+      android:layout_marginRight="40dp"
+      android:layout_marginEnd="40dp"
+      android:id="@+id/linearLayout2">
 
       <TextView
           android:id="@+id/user"
@@ -82,7 +108,7 @@ android:layout_marginLeft="20dp"
           android:layout_marginLeft="10dp"
           android:layout_marginRight="10dp"
           android:textColor="#FFFFFB"
-          android:textSize="15sp"
+          android:textSize="20sp"
           android:layout_width="wrap_content"
           android:layout_height="wrap_content"/>
    </LinearLayout>
